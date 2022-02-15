@@ -7,6 +7,7 @@ f0 =50;
 f1 = 4;
 f2 = 2;
 % Amplitude parameters
+%FIXME No need to specify both A and SNR because of normalization
 A = 2;
 b = 5;
 % Signal SNR

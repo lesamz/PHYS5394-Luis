@@ -1,10 +1,15 @@
 function sigVec = gensingausig(dataT,sn,sigParams)
 % Generate a Sine-Gaussian signal
 % S = GENSINGAUSIG(T,SNR,PARAMS)
-% Generates an Sine-Gaussian signal for the Statistical Methods Class. 
+% Generates a Sine-Gaussian signal. 
 % T is the vector of time stamps at which the samples of the signal 
 % are to be computed. SNR is the signal-to-noise ratio of S. 
-% PARAMS are the parameters [A,t0,sig,f0,phi0] of the signal. 
+% PARAMS are the parameters [A,t0,sig,f0,phi0] of the signal.
+%FIXME Add definitions of the parameters (t0, ...) and what roles they play
+%in the signal formula.
+%FIXME parameter name 'sig' is ambiguous: normally one would assume it to
+%mean 'signal'. 
+%FIXME parameter A is not needed since it is normalized away
 % The frequency f0 is given in Hz.
 
 %Luis E. Salazar-Manzano, Feb 2022
