@@ -22,7 +22,7 @@ timeVec = 0:samplIntrvl:1.0;
 % Generate the signal
 sinVec = genamfmsin(timeVec,sn,[f0,f1,f2,b]);
 
-%Plot the signal 
+% Plot the signal 
 figure;
 plot(timeVec,sinVec,':o','LineWidth',1.5,'MarkerSize',5,'Color',[0.8500 0.3250 0.0980]);
 ylabel('Amplitude','FontUnits','points','Interpreter','latex','FontSize',18,'FontName','Times')
