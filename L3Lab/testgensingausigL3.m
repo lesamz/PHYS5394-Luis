@@ -1,7 +1,9 @@
 clear all
 close all
 clc
+
 %% Plot a Sine-Gaussian signal
+
 % Signal parameters 
 t0 = 30;
 sigma = 0.5;
@@ -20,7 +22,7 @@ timeVec = 0:samplIntrvl:100;
 % Generate the signal
 sigVec = gensingausig(timeVec,sn,[t0,sigma,f0,phi0]);
 
-%Plot the signal 
+% Plot the signal 
 figure;
 plot(timeVec,sigVec,':o','LineWidth',1,'MarkerSize',2,'Color',[0.8500 0.3250 0.0980]);
 ylabel('Amplitude','FontUnits','points','Interpreter','latex','FontSize',18,'FontName','Times')
