@@ -1,8 +1,10 @@
 clear all
 close all
 clc
+
 %% Plot an AM-FM sinusoid signal
-% signal parameters 
+
+% Signal parameters 
 f0 = 50;
 f1 = 2.2;
 f2 = 2;
