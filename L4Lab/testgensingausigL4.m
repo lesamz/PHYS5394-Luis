@@ -1,7 +1,9 @@
 clear all
 close all
 clc
+
 %% Plot a Sine-Gaussian signal
+
 % Signal parameters 
 t0 = 30;
 sigma = 0.5;
