@@ -45,6 +45,5 @@ plot(unsatimeVec,unsasinVec,':o','LineWidth',1.5,'MarkerSize',5,'Color',[0 0.447
 ylabel('Amplitude','FontUnits','points','Interpreter','latex','FontSize',18,'FontName','Times')
 xlabel('Time [s]','FontUnits','points','Interpreter','latex','FontSize',18,'FontName','Times')  
 legend(sprintf('$f_{0}$=%g Hz, $f_{1}$=%g Hz, $f_{2}$=%g Hz, b=%g, SNR=%g',f0,f1,f2,b,sn),'Interpreter','latex','FontSize',14,'Location','best')
-title('AM-FM sinusoid','Interpreter','latex','FontSize',20)    
 title(sprintf('AM-FM sinusoid, sampling frequency: %g Hz',samplFreq(2)),'Interpreter','latex','FontSize',20)
 
