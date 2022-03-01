@@ -1,6 +1,7 @@
 clear all
 close all
 clc
+
 %% Plot an AM-FM sinusoid signal
 
 % Function path
