@@ -40,13 +40,13 @@ legend(sprintf('$t_{0}$=%g s, sigma=%g, $f_{0}$=%g Hz, phi=%g, SNR=%g',t0,sigma,
 title(sprintf('Sine-Gaussian signal, sampling frequency: %g Hz',samplFreq(1)),'Interpreter','latex','FontSize',20);
 grid on;
 
-figure;
-plot(unsatimeVec,unsasigVec,':o','LineWidth',1,'MarkerSize',2,'Color',[0 0.4470 0.7410]);
-ylabel('Amplitude','FontUnits','points','Interpreter','latex','FontSize',18,'FontName','Times');
-xlabel('Time [s]','FontUnits','points','Interpreter','latex','FontSize',18,'FontName','Times');  
-legend(sprintf('$t_{0}$=%g s, sigma=%g, $f_{0}$=%g Hz, phi=%g, SNR=%g',t0,sigma,f0,phi0,sn),'Interpreter','latex','FontSize',14,'Location','best');
-title(sprintf('Sine-Gaussian signal, sampling frequency: %g Hz',samplFreq(2)),'Interpreter','latex','FontSize',20);
-grid on;
+% figure;
+% plot(unsatimeVec,unsasigVec,':o','LineWidth',1,'MarkerSize',2,'Color',[0 0.4470 0.7410]);
+% ylabel('Amplitude','FontUnits','points','Interpreter','latex','FontSize',18,'FontName','Times');
+% xlabel('Time [s]','FontUnits','points','Interpreter','latex','FontSize',18,'FontName','Times');  
+% legend(sprintf('$t_{0}$=%g s, sigma=%g, $f_{0}$=%g Hz, phi=%g, SNR=%g',t0,sigma,f0,phi0,sn),'Interpreter','latex','FontSize',14,'Location','best');
+% title(sprintf('Sine-Gaussian signal, sampling frequency: %g Hz',samplFreq(2)),'Interpreter','latex','FontSize',20);
+% grid on;
 
 %% Plot the periodogram
 

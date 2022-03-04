@@ -165,11 +165,13 @@ grid on;
 %% Functions 
 
 % Generate sinusoids of the form s(t) = A sin(2 pi f0 t + phi0)
+%FIXME Indent the body of a function for better readability
 function sigVec = gensinsig(dataT,Amp,freq,phase)
 sigVec = Amp*sin(2*pi*freq*dataT+phase);
 end
 
 % Generate a periodogram
+%FIXME Indent the body of a function for better readability
 function [fftSig,posFreq] = genprdgrm(dataT,dataI)
 % DFT frequency spacing 
 freqSpac = 1/(dataT(end)-dataT(1));

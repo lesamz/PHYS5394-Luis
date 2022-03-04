@@ -43,13 +43,13 @@ legend(sprintf('$f_{0}$=%g Hz, $f_{1}$=%g Hz, $f_{2}$=%g Hz, b=%g, SNR=%g',f0,f1
 title(sprintf('AM-FM sinusoid, sampling frequency: %g Hz',samplFreq(1)),'Interpreter','latex','FontSize',20);
 grid on;
 
-figure;
-plot(unsatimeVec,unsasinVec,':o','LineWidth',1.5,'MarkerSize',5,'Color',[0 0.4470 0.7410]);
-ylabel('Amplitude','FontUnits','points','Interpreter','latex','FontSize',18,'FontName','Times');
-xlabel('Time [s]','FontUnits','points','Interpreter','latex','FontSize',18,'FontName','Times');  
-legend(sprintf('$f_{0}$=%g Hz, $f_{1}$=%g Hz, $f_{2}$=%g Hz, b=%g, SNR=%g',f0,f1,f2,b,sn),'Interpreter','latex','FontSize',14,'Location','best');
-title(sprintf('AM-FM sinusoid, sampling frequency: %g Hz',samplFreq(2)),'Interpreter','latex','FontSize',20);
-grid on;
+% figure;
+% plot(unsatimeVec,unsasinVec,':o','LineWidth',1.5,'MarkerSize',5,'Color',[0 0.4470 0.7410]);
+% ylabel('Amplitude','FontUnits','points','Interpreter','latex','FontSize',18,'FontName','Times');
+% xlabel('Time [s]','FontUnits','points','Interpreter','latex','FontSize',18,'FontName','Times');  
+% legend(sprintf('$f_{0}$=%g Hz, $f_{1}$=%g Hz, $f_{2}$=%g Hz, b=%g, SNR=%g',f0,f1,f2,b,sn),'Interpreter','latex','FontSize',14,'Location','best');
+% title(sprintf('AM-FM sinusoid, sampling frequency: %g Hz',samplFreq(2)),'Interpreter','latex','FontSize',20);
+% grid on;
 
 %% Plot the periodogram
 
