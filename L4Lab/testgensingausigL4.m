@@ -4,6 +4,9 @@ clc
 
 %% Plot a Sine-Gaussian signal
 
+% Function path
+addpath('../L3Lab');
+
 % Signal parameters 
 t0 = 30;
 sigma = 0.5;
