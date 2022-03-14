@@ -12,10 +12,3 @@ function trialval = customrand(notrials,pdfparams)
 %Luis E. Salazar-Manzano, Mar 2022
 
 trialval = (pdfparams(2) - pdfparams(1)).*rand(1,notrials) + pdfparams(1);
-
-
-
-
-
-
-
