@@ -1,6 +1,8 @@
 function trialval = customrand(notrials,pdfparams)
+%FIXME Use 'nTrials' instead of 'notrials'; the latter is confusing,
 % Customized rand() function
 % Y = CUSTOMRAND(No,PARAMS)
+%FIXME Use 'N' instead of 'No'; Makes it clear to users that N is an integer
 % Generates trial outcomes of uniform pdf for a continuous random variable. 
 % No is the number of trial outcomes to generate. PARAMS is the 
 % vector [a b] that parametrize the uniform pdf U(x;a,b), where a is the 

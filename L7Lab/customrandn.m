@@ -1,4 +1,5 @@
 function trialval = customrandn(notrials,pdfparams)
+%FIXME See my comments in CUSTOMRAND.
 % Customized randn() function
 % Y = CUSTOMRANDN(No,PARAMS)
 % Generates trial outcomes of normal pdf for a continuous random variable. 

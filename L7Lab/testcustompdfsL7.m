@@ -49,5 +49,7 @@ plot(xidealnor,yidealnor, 'LineWidth', 2, 'Color', 'b')
 ylabel('Normalized frequency','FontUnits','points','Interpreter','latex','FontSize',18,'FontName','Times')
 xlabel('Random variable x','FontUnits','points','Interpreter','latex','FontSize',18,'FontName','Times')
 legend({sprintf('generated $N$=%g', notrials),'ideal'},'Interpreter','latex','FontSize',14,'Location','best')
-title(sprintf('Normal pdf: $mu$=%g, $sigma$=%g', muparam, sigmaparam),'Interpreter','latex','FontSize',20)    
+%NOTE See change below to get greek letters
+%title(sprintf('Normal pdf: $mu$=%g, $sigma$=%g', muparam, sigmaparam),'Interpreter','latex','FontSize',20)    
+title(['Normal pdf: $\mu$=', num2str(muparam),', $\sigma$=', num2str(sigmaparam)],'Interpreter','latex','FontSize',20)    
 grid on
