@@ -8,7 +8,7 @@ file = load('iLIGOSensitivity.txt','-ascii'); % power spectral density (PSD)
 fileFreq = file(:,1); % vector of frequencies
 fileSenst = file(:,2); % vector of sensitivity values
 
-sampFreq = 2*fileFreq(end); % sampling frequency
+sampFreq = 4096;%2*fileFreq(end); % sampling frequency
 
 % adjustements to the frequency vector of the target PSD 
 freqInts = [fileFreq(2)-fileFreq(1), fileFreq(end)-fileFreq(end-1)]; % frequency intervals at the ends
@@ -27,7 +27,8 @@ senstVec = [senstVecL fileSenst(idL:idR)' senstVecR]; % modified vector of sensi
 
 % Design of the filter 
 fltrOrdr = 500; % filter order
-sqrtPSDVals = sqrt(senstVec); % filter transfer function
+%FIXME The supplied values in iLIGOSensitivity.txt are already sqrt(PSD); Review lab slides
+sqrtPSDVals = senstVec;%sqrt(senstVec); % filter transfer function
 wnVec = freqVec/(sampFreq/2); % normalized frequency vector
 bCoeffs = fir2(fltrOrdr, wnVec, sqrtPSDVals); % filter coefficients
 
@@ -38,7 +39,7 @@ outNoise = sqrt(sampFreq)*fftfilt(bCoeffs, inNoise); % output LIGO noise
 timeVec = (0:(nSamples-1))/sampFreq; % time samples
 
 % PSD estimation of the noise
-windowPSD = 400;  % number of samples in the window 
+windowPSD = 256;%400  % number of samples in the window 
 [PSDValsin, PSDfreqin] = pwelch(inNoise, windowPSD, [], [], sampFreq); % input noise
 [PSDValsout, PSDfreqout] = pwelch(outNoise, windowPSD, [], [], sampFreq); % output noise
 
@@ -90,12 +91,16 @@ legend('input white gaussian noise','Interpreter','latex','FontSize',14,'Locatio
 ylabel('PSD','FontUnits','points','Interpreter','latex','FontSize',18,'FontName','Times');
 xlabel('Frequency [Hz]','FontUnits','points','Interpreter','latex','FontSize',18,'FontName','Times'); 
 title('Power spectral density of the noise','Interpreter','latex','FontSize',20);
-xlim([fileFreq(idL) fileFreq(idR)])
+% xlim([fileFreq(idL) fileFreq(idR)])
 grid on;
 subplot(2,1,2);
 loglog(PSDfreqout,PSDValsout,'-o','Color',[0 0 0]);
-legend('simulated LIGO noise','Interpreter','latex','FontSize',14,'Location','best')
+%FIXME SDM: Added the design sensitivity for reference
+hold on;
+loglog(freqVec,senstVec.^2);
+legend({'simulated LIGO noise','Reference PSD'},'Interpreter','latex','FontSize',14,'Location','best')
 ylabel('PSD','FontUnits','points','Interpreter','latex','FontSize',18,'FontName','Times');
 xlabel('Frequency [Hz]','FontUnits','points','Interpreter','latex','FontSize',18,'FontName','Times'); 
-xlim([fileFreq(idL) fileFreq(idR)])
+% xlim([fileFreq(idL) fileFreq(idR)])
 grid on;
+
