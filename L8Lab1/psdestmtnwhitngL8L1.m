@@ -7,16 +7,20 @@ clc
 % and whitening of data through the Wiener-Khinchin theorem   
 
 % Import data file
+%FIXME Avoid using variable names that could be reserved keywords (e.g., 'file' is too generic)
 file = load('testData.txt'); 
 
 % Extract the noise part and find the sampling frequency
-sampInts = []; 
-i = 1;
-while file(i,1) < 5 % Find the length of the noise vector      
-    sampInts = [sampInts, file(i+1,1)-file(i,1)]; % sampling intervals
-    i = i+1;
-end
-noiseVecLim = i-1;
+%FIXME A more efficient and compact code given below 
+sampInts = diff(file(:,1));
+noiseVecLim = sum(file(:,1)<5);
+% sampInts = []; 
+% i = 1;
+% while file(i,1) < 5 % Find the length of the noise vector      
+%     sampInts = [sampInts, file(i+1,1)-file(i,1)]; % sampling intervals
+%     i = i+1;
+% end
+%noiseVecLim = i-1;
 % figure; 
 % histogram(sampInts)
 meanSamp = mean(sampInts); % mean sampling interval [s]
