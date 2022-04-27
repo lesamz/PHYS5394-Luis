@@ -84,7 +84,5 @@ hold on;
 histogram(llrH1,'FaceColor',[0.4660 0.6740 0.1880]);
 xlabel('Log-Likelihood Ratio','FontUnits','points','Interpreter','latex','FontSize',18,'FontName','Times');
 ylabel('Counts','FontUnits','points','Interpreter','latex','FontSize',18,'FontName','Times');
-%FIXME H0: data is noise only; H1: data is signal+noise; we need to decide under which hypothesis (and corresponding pdf) was the given data obtained
-%SDM changed legends
 legend({'Null hypothesis $H_{0}$ (signal absent)','Alternative hypothesis $H_{1}$ (signal present)'},'Interpreter','latex','FontSize',14,'Location','best');
 title(['Estimated SNR = ',num2str(estSNR)],'Interpreter','latex','FontSize',20);
