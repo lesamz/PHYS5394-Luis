@@ -1,14 +1,17 @@
 function sinVec = genamfmsinmod(dataT,snr,sigParams)
 % Generate an AM-FM sinusoid
 % S = GENAMFMSIN(T,SNR,SP)
-% Generates an AM-FM sinusoid for the Statistical Methods Class. 
+%FIXME Doc: help should be specific.
+% Generates an AM-FM sinusoid.
 % T is the vector of time stamps at which the samples of the signal 
 % are to be computed. SNR is the signal-to-noise ratio of S. 
-% SP is a structure with the parameters SP.f0, SP.f1, SP.f2, SP.b of the signal, 
-% where the frequency of the carrier signal SP.f0, the modulation frequency 
-% SP.f1, the frequency of the amplitude modulation SP.f3, are given in Hz. The
-% parameter SP.b is the frequency modulation index, which controls the amount 
-% of frequency deviation. 
+%FIXME Doc: Standard way to document structs. Check that the changes made are correct.
+% SP is a structure with the parameters:
+%   SP.f0: frequency (Hz) of the carrier signal
+%   SP.f1: the frequency of the periodic frequency modulation
+%   SP.f2: the frequency of the amplitude modulation
+%   SP.b:  amplitude of frequency modulation, which controls the amount 
+%          of frequency deviation. 
 % The functional form of the AM-FM sinusoid is:
 % S(T) = cos(2 pi SP.f2 T) × sin (2 pi SP.f0 T + SP.b cos(2 pi SP.f1 T) )
 % If the conditions SP.f0>10*SP.f1 and SP.f1>SP.f2 are not met, the function 
