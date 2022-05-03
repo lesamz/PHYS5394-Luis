@@ -1,7 +1,6 @@
 function sinVec = genamfmsinmod(dataT,snr,sigParams)
 % Generate an AM-FM sinusoid
 % S = GENAMFMSIN(T,SNR,SP)
-%FIXME Doc: help should be specific.
 % Generates an AM-FM sinusoid.
 % T is the vector of time stamps at which the samples of the signal 
 % are to be computed. SNR is the signal-to-noise ratio of S. 
