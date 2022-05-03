@@ -23,8 +23,8 @@ timeVec = 0:samplIntrvl(1):1.0;
 % Number of samples
 nSamples = length(timeVec);
 
-%Function Handle of the SNR
-%FIXME Doc: The function handle is for the function, not the SNR
+% Function handle of the genamfmsinmod.m function, timeVec and sigParams
+% are already initialized
 gensinVecHandle = @(snr) genamfmsinmod(timeVec, snr, sigParams);
 
 % Generate the signals
