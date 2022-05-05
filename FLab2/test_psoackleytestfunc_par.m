@@ -103,10 +103,12 @@ grid on;
 
 
 figure
-[x1,x2] = meshgrid(-32:1:32,-32:1:32);
+[x1,x2] = meshgrid(-32:0.05:32,-32:0.05:32);
 ackVal = -20*exp(-0.2*sqrt((x1.^2+x2.^2)/2))-exp((cos(2*pi*x1)+cos(2*pi*x2))/2)+20+exp(1);
 surf(x1,x2,ackVal,'FaceAlpha',0.5)
 xlabel('first coordinate','FontUnits','points','Interpreter','latex','FontSize',18,'FontName','Times');
 ylabel('second coordinate','FontUnits','points','Interpreter','latex','FontSize',18,'FontName','Times');
 zlabel('Fitness value','FontUnits','points','Interpreter','latex','FontSize',18,'FontName','Times');
 title('Ackley benchmark function of 2 dimensions','Interpreter','latex','FontSize',20);
+%SDM
+shading interp;
