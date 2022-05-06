@@ -44,9 +44,6 @@ function [fitVal,varargout] = psoackleytestfunc(xVec,params)
 
 % rows: points
 % columns: coordinates of a point
-%FIXME Error: 'D' in Ackley is the number of dimensions; nrows is the number of PSO particles
-%[nrows,~]=size(xVec);
-%SDM
 [nrows,nDims]=size(xVec);
 
 % storage for fitness values
@@ -66,8 +63,6 @@ for lpc = 1:nrows
     % functions
         x = xVec(lpc,:);
         % Ackley benchmark function
-        %FIXME Error: 'D' in Ackley is the number of dimensions; nrows is the number of PSO particles
-        %fitVal(lpc) = -20*exp(-0.2*sqrt(sum(x.^2)/nrows))-exp(sum(cos(2*pi*x))/nrows)+20+exp(1);
         fitVal(lpc) = -20*exp(-0.2*sqrt(sum(x.^2)/nDims))-exp(sum(cos(2*pi*x))/nDims)+20+exp(1);
     end
 end
