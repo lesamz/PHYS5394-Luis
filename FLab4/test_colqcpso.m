@@ -1,6 +1,6 @@
 clear all
 close all
-clc
+% clc
 %%
 
 addpath('../L11Lab');
@@ -40,7 +40,9 @@ snr = 10; % Target SNR for the Signal
 [sigVecNorm,~] = normsig4psd(sigVec,sampFreq,psdPosFreq,snr);
 
 % Generate noise
-noiseVec = statgaussnoisegen(nSamples,[posFreq(:),psdPosFreq(:)],100,sampFreq);
+%FIXME How to remove filter startup transient shown below
+noiseVec = statgaussnoisegen(nSamples+100,[posFreq(:),psdPosFreq(:)],100,sampFreq);
+noiseVec = noiseVec(101:end);
 % Generate data
 dataVec = noiseVec + sigVecNorm;
 
@@ -76,7 +78,7 @@ plot(timeVec,sigVecNorm,'-','LineWidth',2,'Color',[0.6350 0.0780 0.1840]);
 for lpruns = 1:nRuns
     plot(timeVec,outStruct.allRunsOutput(lpruns).estSig,'Color',[0.4660 0.6740 0.1880],'LineWidth',2.0);
 end
-plot(timeVec,outStruct.bestSig,'Color',[0 0 0],'LineWidth',1.0);
+plot(timeVec,outStruct.bestSig,'Color',[0 0 0],'LineWidth',2.0);
 legend('Data (Signal + Noise)','Signal',...
        ['Estimated signal: ',num2str(nRuns),' runs'],...
        'Estimated signal: Best run','Interpreter','latex','FontSize',14,'Location','best');
