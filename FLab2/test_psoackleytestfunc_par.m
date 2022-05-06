@@ -110,5 +110,4 @@ xlabel('first coordinate','FontUnits','points','Interpreter','latex','FontSize',
 ylabel('second coordinate','FontUnits','points','Interpreter','latex','FontSize',18,'FontName','Times');
 zlabel('Fitness value','FontUnits','points','Interpreter','latex','FontSize',18,'FontName','Times');
 title('Ackley benchmark function of 2 dimensions','Interpreter','latex','FontSize',20);
-%SDM
 shading interp;
