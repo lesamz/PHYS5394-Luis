@@ -17,14 +17,10 @@ function glrtVal = fitglrtqcsig(x,params)
 phaseVec = x(1)*params.dataX + x(2)*params.dataXSq + x(3)*params.dataXCb;
 qc = sin(2*pi*phaseVec);
 
-% Find the sampling frequency
-nSamples = length(params.dataX);
-sampFreq = (nSamples-1)/params.dataX(end);
-
 % Generate the unit norm signal (i.e., template)
-[templateVec,~] = normsig4psd(qc,sampFreq,params.psdY,1); 
+[templateVec,~] = normsig4psd(qc,params.sampFreq,params.psdY,1); 
 % Calculate inner product of data with template
-llr = innerprodpsd(params.dataY,templateVec,sampFreq,params.psdY);
+llr = innerprodpsd(params.dataY,templateVec,params.sampFreq,params.psdY);
 % Compute fitness, GLRT is the square 
 glrtVal = -llr^2; 
 
