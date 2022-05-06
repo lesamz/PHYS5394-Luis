@@ -11,7 +11,8 @@ function [fitVal,varargout] = glrtqcsig4pso(xVec,params)
 % The fields P.dataY and P.dataX are used to transport the data and its
 % time stamps. The fields P.dataXSq and P.dataXCb contain the timestamps
 % squared and cubed respectively. The fields P.psdY and P.psdX have the 
-% colored noise PSD and its frequencies.
+% colored noise PSD and its frequencies. The field P.sampFreq has the 
+% sampling frequency of the data.
 %
 % [F,R] = GLRTQCSIG4PSO(X,P)
 % returns the quadratic chirp coefficients corresponding to the rows of X in R. 
