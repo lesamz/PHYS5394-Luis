@@ -40,7 +40,6 @@ snr = 10; % Target SNR for the Signal
 [sigVecNorm,~] = normsig4psd(sigVec,sampFreq,psdPosFreq,snr);
 
 % Generate noise
-%FIXME How to remove filter startup transient shown below
 noiseVec = statgaussnoisegen(nSamples+100,[posFreq(:),psdPosFreq(:)],100,sampFreq);
 noiseVec = noiseVec(101:end);
 % Generate data
@@ -85,7 +84,6 @@ legend('Data (Signal + Noise)','Signal',...
 disp(['Estimated parameters: a1=',num2str(outStruct.bestQcCoefs(1)),...
                              '; a2=',num2str(outStruct.bestQcCoefs(2)),...
                              '; a3=',num2str(outStruct.bestQcCoefs(3))]);
-xlim([timeVec(100) timeVec(end)]);
 ylabel('Values','FontUnits','points','Interpreter','latex','FontSize',18,'FontName','Times');
 xlabel('Time [s]','FontUnits','points','Interpreter','latex','FontSize',18,'FontName','Times');
 grid on;
