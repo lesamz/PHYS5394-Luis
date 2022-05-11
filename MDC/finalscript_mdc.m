@@ -70,6 +70,7 @@ fHandle = @(x) glrtqcsig4pso(x,inParams); % Function handle
 
 nRuns = 8; % Number of independent PSO runs
 outStruct = colqcpso(inParams,struct('maxSteps',2000),nRuns); % PSO implementation
+disp('Completed run on AnalysisDat.mat');
 
 % Plot
 figure;
@@ -91,12 +92,16 @@ grid on;
 %% Significance 
  
 % GLRT values for multiple H0 data realizations
-nH0 = 10000; % H0 data realizations 
+nH0 = 100; % H0 data realizations 
 glrtValsH0 = zeros(1,nH0);
 for i = 1:nH0
     noiseVec = statgaussnoisegen(nSamplesdat+100,[PSDfreqsDFT(:),PSDValsintrp(:)],100,datFile.sampFreq);
     noiseVec = noiseVec(101:end);
-    glrtValsH0(i) = glrtqsig([timeVecdat; noiseVec],[PSDfreqsDFT; PSDValsintrp],[outStruct.bestQcCoefs(1) outStruct.bestQcCoefs(2) outStruct.bestQcCoefs(3)]);
+    %FIXME Error: The call should have been to colqcpso
+    %glrtValsH0(i) = glrtqsig([timeVecdat; noiseVec],[PSDfreqsDFT; PSDValsintrp],[outStruct.bestQcCoefs(1) outStruct.bestQcCoefs(2) outStruct.bestQcCoefs(3)]);
+    inParams.dataY = noiseVec;
+    outStruct_tmp = colqcpso(inParams,struct('maxSteps',2000),nRuns); % PSO implementation
+    glrtValsH0(i) = -1*outStruct_tmp.bestFitness;
 end
 
 % GLRT value for the H1 data realization
